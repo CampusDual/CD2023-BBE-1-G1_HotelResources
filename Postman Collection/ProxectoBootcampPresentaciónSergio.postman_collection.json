@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "7989f0d2-e7f8-470b-ab1f-21683dc6c733",
+		"name": "ProxectoBootcampPresentaciónSergio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23619434"
+	},
+	"item": [
+		{
+			"name": "Presentacion",
+			"item": [
+				{
+					"name": "fichaje entrada",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"login_name\": \"alba_torres\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/clockIn",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"clockIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta de turnos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"employee\": {\r\n            \"columns\": [\r\n                \"user_name\",\r\n                \"surname1\",\r\n                \"email\"\r\n            ]\r\n        }\r\n    },\r\n    \"columns\": [\r\n        \"id\",\r\n        \"rolename\",\r\n        \"monday\",\r\n        \"tuesday\",\r\n        \"wednesday\",\r\n        \"thursday\",\r\n        \"friday\",\r\n        \"saturday\",\r\n        \"sunday\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/shifts/shift/search",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"shifts",
+								"shift",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "consulta de un turno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"id\": 33,\r\n        \"employee\": {\r\n            \"columns\": [\r\n                \"user_name\",\r\n                \"surname1\",\r\n                \"email\"\r\n            ]\r\n        }\r\n    },\r\n    \"columns\": [\r\n        \"id\",\r\n        \"rolename\",\r\n        \"monday\",\r\n        \"tuesday\",\r\n        \"wednesday\",\r\n        \"thursday\",\r\n        \"friday\",\r\n        \"saturday\",\r\n        \"sunday\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/shifts/shift/search",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"shifts",
+								"shift",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empleados activos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n       \"id\":29\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/employeesPerShift",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"employeesPerShift"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "dar de alta empleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"role_name\": \"receptionist\",\r\n        \"login_name\": \"antonio_gude\",\r\n        \"id_document\": \"26907766C\",\r\n        \"user_name\": \"Antonio\",\r\n        \"surname1\": \"Gude\",\r\n        \"country_id\": 1,\r\n        \"phone_number\": \"627592780\",\r\n        \"email\": \"antonio_gude@example.org\",\r\n        \"user_password\": \"Abc1234.\",\r\n        \"hotel_id\": 5,\r\n        \"days_off\": [\"sunday\"]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear turno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"role_name\": \"receptionist\",\r\n        \"wednesday\": {\r\n            \"start\": \"10:00\",\r\n            \"end\": \"19:00\"\r\n        },\r\n        \"thursday\": {\r\n            \"start\": \"10:00\",\r\n            \"end\": \"19:00\"\r\n        },\r\n        \"hotel_id\": 5,\r\n        \"login_names\": [\r\n            \"antonio_gude\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/shifts/shift",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"shifts",
+								"shift"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empleados en turno",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Manager1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "manager",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"id\": \r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/employeesPerShift",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"employeesPerShift"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fichaje empleado",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "antonio_gude",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "Abc1234.",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"login_name\": \"antonio_gude\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/clockIn",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"clockIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Añadir habitación",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"room_number\": 314,\r\n        \"hotel_id\": 5,\r\n        \"number_of_beds\": 4,\r\n        \"base_price\": 150\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/rooms/room",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"rooms",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update room",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Abc1234.",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "alba_torres",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\":{\r\n        \"id\": \r\n    },\r\n    \"data\": {\r\n        \"number_of_beds\": 3,\r\n        \"base_price\": 100\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/rooms/room",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"rooms",
+								"room"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ClockOut",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "Abc1234.",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "alba_torres",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\":{\r\n        \"login_name\":\"alba_torres\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:30030/employees/clockOut",
+							"host": [
+								"localhost"
+							],
+							"port": "30030",
+							"path": [
+								"employees",
+								"clockOut"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "Abc1234.",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "alba_torres",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
